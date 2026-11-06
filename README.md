@@ -1,7 +1,12 @@
 # 砖块爆破 BrickBash
 
+[![Build APK](https://github.com/huoguowang/brickbash/actions/workflows/build-apk.yml/badge.svg)](https://github.com/huoguowang/brickbash/actions/workflows/build-apk.yml)
+
 原生 Android 打砖块游戏。Kotlin + 自定义 View + Canvas，**零第三方依赖**（没用 AndroidX，也没用游戏引擎），
 构建快、包小、逻辑全部可读。代码约 600 行，分三块：
+
+> 仓库：https://github.com/huoguowang/brickbash
+> 已经过一次真实 CI 编译（JDK 17 + Gradle 8.7 + AGP 8.5.2），产物 `app-debug.apk` 约 796 KB。
 
 | 文件 | 职责 |
 | --- | --- |
@@ -78,7 +83,7 @@ Actions 里会自动用 JDK 17 + Gradle 8.7 编译，跑完在 run 页面底部�
 
 ## 当前状态
 
-- 这台手机上没有 JDK / Android SDK，也连不上 `dl.google.com`，所以**代码还没在这里编译验证过**；
-  GitHub Actions 会是第一个真实编译环境，有报错把日志贴给我，我直接改。
+- 已通过 GitHub Actions 实际编译，产物是签名过的 debug APK（debug keystore 签的，能 sideload、不能上架）。
+- 这台手机本机没有 JDK / Android SDK，所以本地没有编译能力，改动后靠 CI 验证。
 - 没有音效（要的话加 `res/raw` + `SoundPool`，我可以补）。
 - 没有排行榜、成就、多语言。
